@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<di_coreextended>
+			<version>0.1.0</version>
+		</di_coreextended>
+	</modules>
+	<global>
+		<models>
+			<coreextended>
+				<class>DI_CoreExtended_Model</class>
+			</coreextended>
+		</models>
+	</global>
+	<frontend>
+		<routers>
+			<newsletter>
+				<args>
+					<modules>
+						<di_coreextended_newsletter before="Mage_Newsletter_SubscriberController">DI_CoreExtended_Newsletter</di_coreextended_newsletter>
+					</modules>
+				</args>
+			</newsletter>
+			<customer>
+				<args>
+					<modules>
+						<di_coreextended_Customer before="Mage_Customer">DI_CoreExtended_Customer</di_coreextended_Customer>
+					</modules>
+				</args>
+			</customer>
+			<checkout>
+				<args>
+					<modules>
+						<DI_CoreExtended_Checkout before="Mage_Checkout">DI_CoreExtended_Checkout</DI_CoreExtended_Checkout>
+					</modules>
+				</args>
+			</checkout>	
+		</routers>
+	</frontend>
+	
+</config>

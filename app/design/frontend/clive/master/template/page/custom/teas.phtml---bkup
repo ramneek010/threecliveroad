@@ -1,0 +1,36 @@
+<?php $currentCategory =  Mage::registry('current_category');?>
+<?php $currentProduct =  Mage::registry('current_product');?>
+<?php if($currentCategory!='') {?>
+	     <?php  $currentCatId = $currentCategory->getId();?> 
+<?php }?>
+<?php if($currentProduct!='') {
+		$currentProductId = $currentProduct->getId();
+	}?>
+
+<?php if($currentProductId=='') { ?>
+<?php $active= "category_active";?>
+<?php } else {?>
+<?php $activeProduct= "category_active";?>
+<?php }?>
+
+<div class="remove-filter">
+	<a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+</div>
+<div class="block-title"> 
+<span class="<?php if($currentCatId=='3') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea.html"> ALL TEAS</a></span> </div>
+<div class="left-category">
+<h3><span class="<?php if($currentCatId=='7') { echo $active ;}?>"> <a href="<?php echo Mage::getBaseUrl()?>tea/blends.html">BLENDS</a></span></h3>
+<ul>
+  <li><span class="<?php if($currentProductId=='13') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/aurangzeb-blend.html">Aurangzeb Blend</a></span></li>
+  <li><span class="<?php if($currentProductId=='54') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/ayurvedic-blend.html">Ayurvedic Blend</a></span></li>
+  <li><span class="<?php if($currentProductId=='17') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/diwali-blend-limited-edition.html">Diwali Blend <br/>Limited Edition</a></span></li>
+  <li><span class="<?php if($currentProductId=='56') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/jaipur-blend.html">Jaipur Blend</a></span></li>
+  <li><span class="<?php if($currentProductId=='19') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/jodhpur-blend.html">Jodhpur Blend</a></span></li>
+  <li><span class="<?php if($currentProductId=='21') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/kashmiri-kahwa-36.html">Kashmiri Kahwa</a></span></li>
+  <li><span class="<?php if($currentProductId=='24') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/madurai-masala-blend.html">Madurai Masala Blend</a></span></li>
+  <li><span class="<?php if($currentProductId=='58') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/maheshwar-blend.html">Maheshwar Blend</a></span></li>
+  <li><span class="<?php if($currentProductId=='60') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/maheshwar-blend-limited-edition.html">Maheshwar Blend Limited Edition</a></span></li>
+  <li><span class="<?php if($currentProductId=='27') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/malabar-blend.html">Malabar Blend</a></span></li>
+  <li><span class="<?php if($currentProductId=='71') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea/blends/varanasi-blend.html">Varanasi Blend Limited Edition </a></span></li>
+</ul>
+</div>

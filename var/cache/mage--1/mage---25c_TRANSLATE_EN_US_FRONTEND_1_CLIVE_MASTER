@@ -1,0 +1,4 @@
+a:2:{s:3:"Tax";s:3:"GST";s:220:"Example: <b>https://www.Etailer.com/au/cgi-bin/webscr?cmd=_express-checkout&useraction=<user_action>&amp;token=</b>
+Where &lt;user_action&gt; is 'commit' or 'continue', depending on your preference of commit button text.";s:220:"
+Example: <b>https://www.paypal.com/au/cgi-bin/webscr?cmd=_express-checkout&useraction=<user_action>&amp;token=</b>
+Where &lt;user_action&gt; is 'commit' or 'continue', depending on your preference of commit button text.";}

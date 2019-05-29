@@ -1,0 +1,64 @@
+.blog-slider {
+    position: relative;
+    top: -62px;
+}
+.container{
+    padding: 0 10px 52px;
+    max-width: 1260px;
+    margin: 0 auto;
+}
+.home-heading h3 {
+    color: #000;
+    font-size: 23px;
+    line-height: 1em;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 0 0 8px;
+    font-family: 'interstatebold';
+        text-align: center;
+}
+.blog-section, .home-heading{
+   text-align: center; 
+}
+.blog-section h3{
+    background: none;
+    height: auto;
+    font-weight: 400;
+    text-transform: uppercase;
+     color: #000;
+    margin-top: 30px;
+    font-family: 'interstatebold';
+    font-size: 18px;
+        text-align: center;
+}
+.blog-section p{
+    padding-bottom: 15px;
+    font-size: 13px;
+    color: #2E2E2E;
+        font-family: 'interstatelight';
+        text-align: center;
+}
+.home-heading a, .blog-section a {
+    color: #6C6C6C;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    
+}
+.blog-section a:hover, .home-heading a:hover {
+    color: #000; 
+}
+.blog-section img{
+    width: 100%;
+}
+.blog-slider .slick-slide{
+    height: auto !important;
+}
+.home-heading {
+    margin-bottom: 80px;
+    margin-top: -40px;
+}
+.level0.tea3Hover:hover .mouseHoverShow{
+    top: 0px !important;
+}

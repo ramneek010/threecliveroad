@@ -1,0 +1,52 @@
+<?php $currentCategory =  Mage::registry('current_category');?>
+<?php $currentProduct =  Mage::registry('current_product');?>
+<?php if($currentCategory!='') {?>
+	     <?php  $currentCatId = $currentCategory->getId();?> 
+<?php }?>
+
+<?php if($currentProduct!='') {
+		$currentProductId = $currentProduct->getId();
+	}?>
+	
+
+<?php if($currentProductId=='') { ?>
+<?php $active= "category_active";?>
+<?php } else {?>
+<?php $activeProduct= "category_active";?>
+<?php }?>
+
+
+
+<div class="remove-filter">
+	<a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+</div>
+
+<div class="block-title"> <span class="<?php if($currentCatId=='4') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper.html">ALL PAPER</a></span> </div>
+  <div class="left-category">
+    <h3> <span class="<?php if($currentCatId=='21') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/correspondence-paper.html">Correspondence Paper</a></span></h3>
+    <ul>
+      <li><span class="<?php if($currentProductId=='30') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/correspondence-paper/crests-p.html">Crests</a></span></li>
+      <li><span class="<?php if($currentProductId=='31') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/correspondence-paper/greetings-from.html" class="tst">Greetings From</a></span></li>
+      <li><span class="<?php if($currentProductId=='32') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/correspondence-paper/lutyens-new-delhi.html" class="tst">Lutyens New Delhi</a></span></li>
+      <li><span class="<?php if($currentProductId=='33') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/correspondence-paper/monuments-new-delhi.html" class="tst">Monuments New Delhi</a></span></li>
+    </ul>
+  </div>
+  <div class="left-category">
+    <h3><span class="<?php if($currentCatId=='24') { echo $active ;}?>"> <a href="<?php echo Mage::getBaseUrl()?>paper/notecards.html">Note Cards</a></span></h3>
+    <ul>
+    	<li><span class="<?php if($currentProductId=='34') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/notecards/birds-of-south-delhi.html" class="tst">Birds of South Delhi</a></span></li>        
+      <!--li><span class="<?php if($currentProductId=='38') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/notecards/crests.html" class="tst">Crests</a></span></li-->      
+      <li><span class="<?php if($currentProductId=='35') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/notecards/greetings-from-p.html" class="tst">Greetings From</a></span></li>
+      <li><span class="<?php if($currentProductId=='36') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/notecards/lutyens-new-delhi-p.html" class="tst">Lutyens New Delhi</a></span></li>
+      <li><span class="<?php if($currentProductId=='37') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/notecards/monuments-new-delhi.html" class="tst">Monuments New Delhi</a></span></li>
+      <li><span class="<?php if($currentProductId=='41') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/notecards/the-bombay-series.html" class="tst">The Bombay Series</a></span></li>
+    </ul>
+  </div>
+  <div class="left-category">
+    <h3> <span class="<?php if($currentCatId=='25') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/gift-cards.html">GIFT TAGS</a></span></h3>
+    <ul>
+    	<li><span class="<?php if($currentProductId=='40') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/gift-cards/birds.html" class="tst">Birds</a></span></li>
+	   <li><span class="<?php if($currentProductId=='38') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/gift-cards/crests.html">Crests</a></span></li>	
+      <li><span class="<?php if($currentProductId=='39') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/gift-cards/greetings-from.html" class="tst">Cheers<!--Greetings From--></a></span></li>
+    </ul>
+  </div>

@@ -1,0 +1,184 @@
+/* Theme Name: DIPVTLTD */
+
+@font-face{font-family:'interstatebold';src:url('fonts/interstate-bold-webfont.eot');src:url('fonts/interstate-bold-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/interstate-bold-webfont.woff2') format('woff2'),
+url('fonts/interstate-bold-webfont.woff') format('woff'),
+url('fonts/interstate-bold-webfont.ttf') format('truetype'),
+url('fonts/interstate-bold-webfont.svg#interstatebold') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'interstateboldcondensed';src:url('fonts/interstateboldcondensed-webfont.eot');src:url('fonts/interstateboldcondensed-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/interstateboldcondensed-webfont.woff2') format('woff2'),
+url('fonts/interstateboldcondensed-webfont.woff') format('woff'),
+url('fonts/interstateboldcondensed-webfont.ttf') format('truetype'),
+url('fonts/interstateboldcondensed-webfont.svg#interstateboldcondensed') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'interstatelight';src:url('fonts/interstate-light-webfont.eot');src:url('fonts/interstate-light-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/interstate-light-webfont.woff2') format('woff2'),
+url('fonts/interstate-light-webfont.woff') format('woff'),
+url('fonts/interstate-light-webfont.ttf') format('truetype'),
+url('fonts/interstate-light-webfont.svg#interstatelight') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'interstateregular';src:url('fonts/interstate-regular-webfont.eot');src:url('fonts/interstate-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/interstate-regular-webfont.woff2') format('woff2'),
+url('fonts/interstate-regular-webfont.woff') format('woff'),
+url('fonts/interstate-regular-webfont.ttf') format('truetype'),
+url('fonts/interstate-regular-webfont.svg#interstateregular') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'linotype_didotitalic';src:url('fonts/linotype_didot_italic-webfont.eot');src:url('fonts/linotype_didot_italic-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/linotype_didot_italic-webfont.woff2') format('woff2'),
+url('fonts/linotype_didot_italic-webfont.woff') format('woff'),
+url('fonts/linotype_didot_italic-webfont.ttf') format('truetype'),
+url('fonts/linotype_didot_italic-webfont.svg#linotype_didotitalic') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'interstateregularcondensed';src:url('fonts/interstate-regularcondensed-webfont.eot');src:url('fonts/interstate-regularcondensed-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/interstate-regularcondensed-webfont.woff2') format('woff2'),
+url('fonts/interstate-regularcondensed-webfont.woff') format('woff'),
+url('fonts/interstate-regularcondensed-webfont.ttf') format('truetype'),
+url('fonts/interstate-regularcondensed-webfont.svg#interstateregularcondensed') format('svg');font-weight:normal;font-style:normal;}
+
+*,
+*:before,
+*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:subpixel-antialiased;}
+html{-webkit-tap-highlight-color:rgba(0, 0, 0, 0);-webkit-text-size-adjust:100%;}
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.row:after, .col:after, .clr:after, .group:after{content:"";display:table;clear:both;}
+.row{padding-bottom:0em;margin:0 -10px;}
+.col{display:block;float:left;padding:0 10px;}
+.span_1{width:8.33333333333%;}
+.span_2{width:16.6666666667%;}
+.span_3{width:25%;}
+.span_4{width:33.3333333333%;}
+.span_5{width:41.6666666667%;}
+.span_6{width:50%;}
+.span_7{width:58.3333333333%;}
+.span_8{width:66.6666666667%;}
+.span_9{width:75%;}
+.span_10{width:83.3333333333%;}
+.span_11{width:91.6666666667%;}
+.span_12{width:100%;}
+
+@font-face {
+    font-family: 'interstate-lightnormal';
+    src: url('css/fonts/interstatelight-webfont.woff2') format('woff2'),
+         url('css/fonts/interstatelight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+p{
+font-family: 'interstate-lightnormal';
+    line-height: 23px;
+}
+.new-css p strong{
+line-height:34px;
+}
+ a {
+    color: rgb(159,159,159);
+}
+
+.page-header {
+    background: #020202;
+    height: 46px;
+    position: relative;
+    width: 100%;
+    top: 25px;
+    z-index: 999;
+}
+div.home-logo, div.navigation {
+    display: inline-block;
+    vertical-align: top;
+}
+.logo .small, .logo .large {
+    width: 114px;
+    height: 76px;
+    display: block;
+    max-width: 100%;
+}
+.logo {
+    display: inline-block;
+}
+div.home-logo {
+    margin-top: -15px;
+    padding-right: 40px;
+}
+.headerContainer, .footer-content {
+    width: 100%;
+    padding: 0px 30px;
+}
+.nav-primary {
+    display: block;
+    margin-top: 0px;
+}
+.nav-primary a {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    color: #FFFFFF;
+    line-height: 45px;
+    font-family: 'interstateregular';
+    font-size: 12px;
+}
+.nav-primary li.level0, .nav-primary a.level0 {
+    display: inline-block;
+}
+.nav-primary li {
+    position: relative;
+}
+.nav-primary li.level0 > a {
+    text-transform: uppercase;
+}
+.nav-primary a.level0 {
+    padding: 0 20px;
+    line-height: 46px;
+}
+.nav-primary a:hover, .nav-primary li:hover > a {
+    color: #f7bd2a;
+}
+.new-css p {
+    margin-bottom: 0px;
+    text-align: center;
+    padding: 16px;
+}
+.new-css .fl-rich-text p:last-child{
+    padding-bottom: 38px;
+    padding-top: 0;
+}
+.new-css .fl-rich-text p:last-child strong{
+    line-height: 50px;
+}
+
+strong {
+    font-family: 'interstatebold';
+    color: #2E2E2E;
+}
+.fl-rich-text p {
+    margin-bottom: 10px;
+    line-height: 24px;
+}
+.wp-caption-text{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 4px;
+    color: #969696;
+    line-height: 1.5em;
+}
+.fl-module-content {
+    margin: 0px 20px;
+}
+
+.fl-rich-text p a {
+    text-align: center;
+    font-family: 'interstatelight';
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(159,159,159);
+    font-weight: 600;
+    letter-spacing: 0.7px;
+}
+.fl-rich-text hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    display: block;
+    border: 0;
+    background: #969696;
+}

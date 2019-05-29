@@ -1,0 +1,95 @@
+<?php $currentCategory =  Mage::registry('current_category');?>
+<?php $currentProduct =  Mage::registry('current_product');?>
+<?php if($currentCategory!='') {?>
+	     <?php  $currentCatId = $currentCategory->getId();?> 
+<?php }?>
+
+<?php if($currentProduct!='') {
+		$currentProductId = $currentProduct->getId();
+	}?>
+	
+
+<?php if($currentProductId=='') { ?>
+<?php $active= "category_active";?>
+<?php } else {?>
+<?php $activeProduct= "category_active";?>
+<?php }?>
+
+<?php 
+		$productsColleciton = Mage::getModel('catalog/category')->load(21)
+							->getProductCollection()
+							->addAttributeToSelect('*')
+							->addAttributeToFilter('status', 1)
+							->addAttributeToFilter('visibility', 4)
+							 ->setOrder('name', 'ASC');
+?>	
+<div class="remove-filter">
+	<a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+</div>
+
+<div class="block-title"> <span class="<?php if($currentCatId=='4') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper.html">ALL PAPER</a></span> </div>
+
+  <div class="left-category">
+    <h3> <span class="<?php if($currentCatId=='21') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/correspondence-paper.html">Correspondence Paper</a></span></h3>
+    <ul>
+<?php 
+   foreach($productsColleciton as $productData) {  ?>
+   <li><span class="<?php if($currentProductId==$productData->getId()) { echo $activeProduct ;}?>">
+   		<a href="<?php echo $productData->getProductUrl()?>" class="tst"><?php echo $productData->getName()?>	</a>
+            </span>
+  </li>
+<?php } ?>
+    </ul>
+  </div>
+  
+  
+  
+  
+<?php 
+		$productsCollecitonOne = Mage::getModel('catalog/category')->load(24)
+							->getProductCollection()
+							->addAttributeToSelect('*')
+							->addAttributeToFilter('status', 1)
+							->addAttributeToFilter('visibility', 4)
+							 ->setOrder('name', 'ASC');
+?>
+  
+  
+ <div class="left-category">
+    <h3><span class="<?php if($currentCatId=='24') { echo $active ;}?>"> <a href="<?php echo Mage::getBaseUrl()?>paper/notecards.html">Note Cards</a></span></h3>
+    <ul>
+    <?php 
+   foreach($productsCollecitonOne as $productData) {  ?>
+   <li><span class="<?php if($currentProductId==$productData->getId()) { echo $activeProduct ;}?>">
+   		<a href="<?php echo $productData->getProductUrl()?>" class="tst"><?php echo $productData->getName()?>	</a>
+            </span>
+  </li>
+<?php } ?>
+    </ul>
+  </div>
+  
+  
+    
+<?php 
+		$productsCollecitonTwo = Mage::getModel('catalog/category')->load(25)
+							->getProductCollection()
+							->addAttributeToSelect('*')
+							->addAttributeToFilter('status', 1)
+							->addAttributeToFilter('visibility', 4)
+							 ->setOrder('name', 'ASC');
+?>
+  
+  
+  
+  <div class="left-category">
+    <h3> <span class="<?php if($currentCatId=='25') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/gift-cards.html">GIFT TAGS</a></span></h3>
+    <ul>
+    	   <?php 
+   foreach($productsCollecitonTwo as $productData) {  ?>
+   <li><span class="<?php if($currentProductId==$productData->getId()) { echo $activeProduct ;}?>">
+   		<a href="<?php echo $productData->getProductUrl()?>" class="tst"><?php echo $productData->getName()?>	</a>
+            </span>
+  </li>
+<?php } ?>
+    </ul>
+  </div>

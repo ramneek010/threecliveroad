@@ -1,0 +1,33 @@
+<?php $currentCategory =  Mage::registry('current_category');?>
+<?php $currentProduct =  Mage::registry('current_product');?>
+<?php if($currentCategory!='') {?>
+	     <?php  $currentCatId = $currentCategory->getId();?> 
+<?php }?>
+
+<?php if($currentProduct!='') {
+		$currentProductId = $currentProduct->getId();
+	}?>
+	
+
+<?php if($currentProductId=='') { ?>
+<?php $active= "category_active";?>
+<?php } else {?>
+<?php $activeProduct= "category_active";?>
+<?php }?>
+
+
+
+<div class="remove-filter">
+	<a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+</div>
+
+<div class="block-title"> <span class="<?php if($currentCatId=='5') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>accessories.html">ALL ACCESSORIES</a></span> </div>
+  <div class="left-category">
+    <!--h3> <span class="<?php //if($currentCatId=='21') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>paper/correspondence-paper.html">Correspondence Paper</a></span></h3-->
+    <ul>
+      <li><span class="<?php if($currentProductId=='62') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>accessories/sugar-milk-stack-sms.html" class="tst" style="padding-top: 0;">Sugar Milk Stack </a></span></li>
+      <li><span class="<?php if($currentProductId=='63') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>accessories/khullars-with-matching-saucers.html" class="tst">Khullars with Matching Saucers</a></span></li>
+      <li><span class="<?php if($currentProductId=='64') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>accessories/grey-gift-box.html">Gift Box</a></span></li>
+      <li><span class="<?php if($currentProductId=='72') { echo $activeProduct ;}?>"><a href="<?php echo Mage::getBaseUrl()?>accessories/banaras-scented-candle.html">Banaras Scented Candle</a></span></li>
+    </ul>
+  </div>

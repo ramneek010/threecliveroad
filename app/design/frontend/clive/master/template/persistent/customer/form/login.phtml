@@ -1,0 +1,262 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Customer login form template
+ *
+ * @see app/design/frontend/base/default/template/customer/form/login.phtml
+ */
+/** @var $this Mage_Customer_Block_Form_Login */
+?>
+<div class="account-login<?php if (!$this->helper('customer')->isRegistrationAllowed()) echo ' login-only' ?>">
+    <?php /*?><div class="page-title">
+        <h1><?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
+                <?php echo $this->__('Login or Create an Account') ?>
+            <?php else: ?>
+                <?php echo $this->__('Login'); ?>
+            <?php endif; ?></h1>
+    </div><?php */?>
+    <?php echo $this->getMessagesBlock()->toHtml() ?>
+    <form  method="post" id="login-form" class="scaffold-form" autocomplete="off">
+        <?php echo $this->getBlockHtml('formkey'); ?>
+        <div class="col2-set">
+            <?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
+            <?php /*?><div class="col-1 new-users">
+                <div class="content">
+                    <h2><?php echo $this->__('New Here?') ?></h2>
+                    <p class="form-instructions"><?php echo $this->__('Registration is free and easy!') ?></p>
+                    <ul class="benefits">
+                        <li><?php echo $this->__('Faster checkout') ?></li>
+                        <li><?php echo $this->__('Save multiple shipping addresses') ?></li>
+                        <li><?php echo $this->__('View and track orders and more') ?></li>
+                    </ul>
+                </div>
+                <div class="buttons-set">
+                    <a title="<?php echo $this->quoteEscape($this->__('Create an Account')) ?>" class="button" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create an Account') ?></span></span></a>
+                </div>
+            </div><?php */?>
+            <?php endif; ?>
+            <?php // This column should be col-1 if the registration column is not displayed ?>
+            <div class="thanks"></div>
+            <div class="content fieldset">
+                    <h2><?php echo $this->__('Login') ?></h2> 
+                    <?php /*?><p class="form-instructions"><?php echo $this->__('If you have an account with us, please log in.') ?></p>
+                    <p class="required"><?php echo $this->__('* Required Fields') ?></p><?php */?>
+                    <ul class="form-list">
+                        <li>
+                            <label for="email" class="required"><em>*</em><?php echo $this->__('Email') ?></label>
+                            <div class="input-box">
+                                <input type="email" required autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" value="<?php echo $this->escapeHtml($this->getUsername()) ?>" id="email" class="input-text required-entry validate-email" title="<?php echo $this->quoteEscape($this->__('Email')) ?>" />
+                            </div>
+                        </li>
+                        <li>
+                            <label for="pass" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                            <div class="input-box">
+                                <input type="password" required name="login[password]" class="input-text required-entry validate-password" id="pass" title="<?php echo $this->quoteEscape($this->__('Password')) ?>" />
+                            </div>
+                            <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left forgotpassword"><?php echo $this->__('I forgot my password') ?></a>
+                            <span class="login-loader"><img src="<?php echo $this->getSkinUrl('images/login-loader.gif')?>"></span>
+					<div class="buttons-set">
+					<button type="button" class="button login" title="<?php echo $this->quoteEscape($this->__('Login')) ?>" name="send" id="login" ><div class="arrow right"><?php /*?><img src="<?php echo $this->getSkinUrl() ?>images/login-arrow.png" alt="" /><?php */?></div></button>
+					</div>
+                        </li>
+                        <?php echo $this->getChildHtml('form.additional.info'); ?>
+                        
+                        <?php echo $this->getChildHtml('persistent.remember.me'); ?>
+                    </ul>
+                    <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
+                </div>
+        </div>
+        <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
+            <input name="context" type="hidden" value="checkout" />
+        <?php endif; ?>
+    </form>
+    <script type="text/javascript">
+    //<![CDATA[
+        var dataForm = new VarienForm('login-form', true);
+    //]]>
+    </script>
+</div>
+
+
+
+<script type="text/javascript">
+
+
+
+	function validation() {
+		var email = jQuery('#email').val();
+		var pass = jQuery('#pass').val();
+		
+		var i = 0;
+	 if (pass == '') {
+        jQuery('#pass').addClass('error');
+         jQuery('#pass').parent().append('<span class="errorvalidpass">Please enter a password</span>');
+          jQuery('body .errorvalidpass:gt(0)').remove();
+         
+      
+		i++;
+		} else {
+		 jQuery('#pass').removeClass('error');
+		 jQuery('#pass').removeClass('errorvalidpass');
+		}
+		
+		
+		
+		
+		var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+
+
+    if (email == '') {
+        jQuery('#email').addClass('error');
+        jQuery('#email').parent().append('<span class="errorvalid">Please enter a email address</span>');
+        jQuery('body .errorvalid:gt(0)').remove();
+   
+        i++;
+    } else if (!email_regex.test(email)) {
+        jQuery('#email').addClass('error');
+    
+        jQuery('#email').parent().append('<span class="errorvalid">Please enter a valid email address</span>');
+         jQuery('body .errorvalid:gt(0)').remove();
+        i++;
+    }else{
+		  jQuery('#email').removeClass('error'); 
+		   jQuery('#email').removeClass('errorvalid');
+		
+		} 
+		
+		
+		if(i==0) {
+			
+		  return true;
+		} else {
+		  return false;
+		}
+		
+	}
+
+
+
+
+
+
+        jQuery('#login').on('click',function(event){   
+			
+			var resultcheck  = validation();
+			
+			if(resultcheck == true) {
+			
+			 
+			
+				
+			url = '<?php echo Mage::getBaseUrl()?>customer/account/loginPost/';
+			var data = jQuery('#login-form').serialize();
+			data += '&isAjax=1';  
+				jQuery('.login-loader').show(); 
+				jQuery('.login-loader').css('display','block');
+					try {
+						jQuery.ajax({
+							url: url,
+							dataType: 'json',
+							type : 'post',
+							data: data,
+							success: function(data){
+								jQuery('.loader').hide();
+								if(data.success == '1'){ 
+									
+							
+									jQuery('#loginappend').empty().append(data.link);
+									jQuery('.thanks').css('display','block');
+							
+									jQuery('.thanks').empty().html('Login Succesfully!');
+									jQuery('.thanks').css('color',' green');
+									jQuery(".thanks").delay(2000).fadeOut();
+								
+									jQuery('#login-form')[0].reset();
+									jQuery('.login-loader').hide(); 
+								}else{
+									jQuery('.thanks').empty().html(data.error);
+									jQuery('.thanks').css('color', 'red');
+									jQuery('.login-loader').hide(); 
+									jQuery('.thanks').css('display','block');
+								}
+								
+							}
+						});
+					} catch (e) {
+						
+					}	
+					
+					
+				return false;
+			}
+		});
+    
+		//End of ajax code
+    //]]>
+    </script>
+    <style>
+.thanks {
+    text-align: left;
+    margin-left: 8px;
+	display:none;
+    line-height: normal;
+    margin-bottom: 9px;
+}
+
+span.login-loader {
+    position: absolute;
+    z-index: 999999;
+    display: block;
+    right: 6px;
+    top: 6px;
+    width: 11px;
+    display:none;
+  
+}
+.error{
+	border-color:red;
+}
+</style>
+
+<script>
+jQuery(document).ready(function(){
+	
+		 jQuery(document).keypress(function(e) {
+			   
+			var id = jQuery(e.target).attr("id")
+			  
+			if(e.which == 13 && id=='pass') { 
+				jQuery( "#login" ).trigger( "click" );
+			}
+		});
+			 
+	
+	
+});
+
+</script>

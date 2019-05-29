@@ -1,0 +1,40 @@
+/*  MICROTHEMER STYLES  */
+
+
+/*= Body ====================== */
+
+/** Body » Container **/
+.container {
+	max-width: 100% ;
+	width: 100%;
+	width: 100% !important;
+	max-width: 100% !important;
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}
+
+/*= Header ==================== */
+
+/** Header » Header **/
+div.fl-page header.fl-page-nav-toggle-button {
+	width: 100% !important;
+	position: absolute !important;
+	z-index: 100 !important;
+}
+
+/*= Posts Single View ========= */
+
+/** Posts Single View » Post Meta **/
+article#fl-post-1918 div.fl-post-meta-top {
+	/*display: none;*/
+}
+
+/** Posts Single View » Title **/
+.fl-post-header {
+	display: none;
+}
+
+/** Posts Single View » Content **/
+.fl-content {
+	margin-top: 0px !important;
+}

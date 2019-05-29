@@ -1,0 +1,67 @@
+
+<script type="text/javascript">
+//<![CDATA[
+    var quoteBaseGrandTotal = <?php echo (float)$this->getQuoteBaseGrandTotal(); ?>;
+    var checkQuoteBaseGrandTotal = quoteBaseGrandTotal;
+    var payment = new Payment('co-payment-form', '<?php echo $this->getUrl('checkout/onepage/savePayment', array('_secure' => $this->getRequest()->isSecure())) ?>');
+    var lastPrice;
+//]]>
+</script>
+<form action="" id="co-payment-form">	
+    <fieldset id="checkout-payment-method-load">
+        <?php echo $this->getChildHtml('methods') ?>
+    </fieldset>
+</form>
+<div class="tool-tip" id="payment-tool-tip" style="display:none;">
+    <div class="btn-close"><a href="#" id="payment-tool-tip-close" title="<?php echo $this->__('Close') ?>"><?php echo $this->__('Close') ?></a></div>
+    <div class="tool-tip-content"><img src="<?php echo $this->getSkinUrl('images/cvv.gif') ?>" alt="<?php echo $this->__('Card Verification Number Visual Reference') ?>" title="<?php echo $this->__('Card Verification Number Visual Reference') ?>" /></div>
+</div>
+<div>
+<?php $tabelrate = Mage::getStoreConfig('carriers/flatrate/handling_fee', Mage::app()->getStore());?> 
+<?php  $tabletaxshippingamount = (($tabelrate * 18) /100);?>    
+ <?php  $quote = Mage::getSingleton('checkout/session')->getQuote(); ?>  
+<?php  $totaltaxamount = Mage::helper('checkout')->getQuote()->getShippingAddress()->getData('tax_amount')?>    
+<?php $gstData = $totaltaxamount - $tabletaxshippingamount;
+    ?>    
+<!--table cellpadding="2" cellspacing="2"> 
+<tr> <td class="subtotal_text" width="390"><strong style="font-weight: bold;">Subtotal</strong></td> <td class="subtotal_amt_c"><?php echo "Rs.".$quote->getData('subtotal'); ?> </td> </tr>
+<tr><td class="subtotal_taxmt"><strong style="font-weight: bold;"> GST</strong></td>
+   
+<td class="subtotal_taxamt_c"><?php echo Mage::helper('core')->currency($gstData);?></td>
+</tr>
+ 
+</table-->
+ 
+</div>
+
+<div id="checkout-review-table-wrapper">
+<table class="opc-data-table" id="checkout-review-table">    
+<?php echo $this->getLayout()->createBlock('checkout/cart_totals')->setTemplate('checkout/onepage/review/totals.phtml')->tohtml(); ?>
+    </table>
+</div>
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+    function toggleToolTip(event){
+        if($('payment-tool-tip')){
+            $('payment-tool-tip').setStyle({
+                top: (Event.pointerY(event)-560)+'px'//,
+                //left: (Event.pointerX(event)+100)+'px'
+            })
+            $('payment-tool-tip').toggle();
+        }
+        Event.stop(event);
+    }
+    if($('payment-tool-tip-close')){
+        Event.observe($('payment-tool-tip-close'), 'click', toggleToolTip);
+    }
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+    payment.currentMethod = "<?php echo $this->getChild('methods')->getSelectedMethodCode() ?>";
+//]]>
+</script>

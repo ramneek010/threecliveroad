@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<DI_CoreExtended>
+			<active>true</active>
+			<codePool>local</codePool>
+		</DI_CoreExtended>
+	</modules>
+</config>

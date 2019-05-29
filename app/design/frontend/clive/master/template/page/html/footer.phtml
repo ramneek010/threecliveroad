@@ -1,0 +1,126 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php
+ 
+ $cmsPageUrl = Mage::getSingleton('cms/page')->getIdentifier();
+
+?>
+<footer>
+<div class="footer-clickable"></div>
+    <div class="footer-container">
+      <!--  <div class="footer-title">
+            <div class="row">
+                <div class="col span_4"></div>
+                <div class="col span_2">POLICIES</div>
+                <div class="col span_2">NO. 3 CLIVE ROAD</div>
+                <div class="col span_4">SIGN UP FOR NEWS & SPECIAL OFFERS</div>
+            </div>
+        </div>-->
+        <div class="footer-content">
+            <div class="row">
+                <div class="col f_span1">
+               	 <img src="<?php echo $this->getSkinUrl('images/footer-logo.svg');?>" height="56" width="56" alt="" class="footer-logo">
+                    <ul>
+                        <li>SOCIAL</li>
+                        <li class="instragram"><a href="http://www.instagram.com/threecliveroad" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li class="pintrest"><a href="http://www.pinterest.com/threecliveroad" target="_blank"><i class="fa fa-pinterest-p"></i></a></li>
+                        <li class="facebook"><a href="http://www.facebook.com/threecliveroad" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <!--li class="twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li-->
+                    </ul>
+                </div>
+                <div class="col f_span2">
+                    <ul>
+                        <li>WE ACCEPT</li>
+                        <li class="card1"><i class="fa fa-cc-visa"></i></li>
+                        <li class="card2"><i class="fa fa-cc-mastercard"></i></li>
+                        <li class="card3"><i class="fa fa-cc-paypal"></i></li>
+                    </ul>
+                </div>
+                <div class="col f_span3">
+                <label>POLICIES</label>
+                    <ul>
+                        <li><a href="<?php echo Mage::getBaseUrl().'shipping'; ?>"<?php if($cmsPageUrl =='shipping'){?> class="active" <?php }?>>SHIPPING</a></li>
+                        <li><a href="<?php echo Mage::getBaseUrl().'privacy-policy'; ?>"<?php if($cmsPageUrl =='privacy-policy'){?> class="active" <?php }?>>PRIVACY POLICY</a></li>
+                        <li><a href="<?php echo Mage::getBaseUrl().'terms-and-conditions'; ?>"<?php if($cmsPageUrl =='terms-and-conditions'){?> class="active" <?php }?>>TERMS & CONDITIONS</a></li>
+                        <li><a href="<?php echo Mage::getBaseUrl().'frequently-asked-questions'; ?>"<?php if($cmsPageUrl =='frequently-asked-questions'){?> class="active" <?php }?>>FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col f_span4">
+                <label>NO. 3 CLIVE ROAD</label>
+					<ul>
+                        <li><a href="<?php echo Mage::getBaseUrl().'about-us'; ?>"<?php if($cmsPageUrl =='about-us'){?> class="active" <?php }?>>ABOUT</a></li>
+                        <li><a href="<?php echo Mage::getBaseUrl().'press.html'; ?>"<?php if($cmsPageUrl =='press'){?> class="active" <?php }?>>PRESS</a></li>
+                        <li><a href="<?php echo Mage::getBaseUrl().'contact'; ?>"<?php if($cmsPageUrl =='contact'){?> class="active" <?php }?>>CONTACT</a></li>
+                        <li><a href="<?php echo Mage::getBaseUrl().'stockists'; ?>"<?php if($cmsPageUrl =='stockists'){?> class="active" <?php }?>>STOCKISTS</a></li>
+                    </ul>
+                </div>
+                <div class="col f_span5"> 
+                
+                <label>SIGN UP FOR NEWS & SPECIAL OFFERS</label>
+                <?php echo $this->getLayout()->createBlock('newsletter/subscribe')->setTemplate('newsletter/subscribe.phtml')->toHtml(); ?>
+                
+                </div>
+            </div>
+            
+            <a href="javascript:void(0)" class="openfooter">open</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78155392-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '911249095712759'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1" 
+src="https://www.facebook.com/tr?id=911249095712759&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+

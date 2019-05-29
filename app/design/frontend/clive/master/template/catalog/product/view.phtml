@@ -1,0 +1,418 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+<div class="product-view">
+    <div class="product-essential">
+    
+    <div class="left-filter-category-title">Filter</div>
+    
+    
+        <form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+            <?php echo $this->getBlockHtml('formkey') ?>
+            <div class="no-display">
+                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                <input type="hidden" name="related_product" id="related-products-field" value="" />
+            </div>
+
+            <div class="product-img-box">
+                <!--<div class="product-name">
+                    <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                </div>-->
+                <?php echo $this->getChildHtml('media') ?>
+            </div>
+
+            <div class="product-shop">
+                <div class="product-name">
+                    <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                    <?php if ($_product->getSubtitle()) {?>
+                    <h3><?php echo $_helper->productAttribute($_product, $_product->getSubtitle(), 'subtitle') ?></h3>
+                   	<?php } ?>
+                    <div id="skunumber" style="display:none;"><?php echo $_product->getSku();?></div>
+                   
+                </div>
+                 <?php if ($_product->getDescription()):?>
+                <div class="product-discription">
+               <p> <?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?></p>
+                <?php $currentCategory = Mage::registry('current_category');?>
+                
+                <?php if(isset($currentCategory)) {
+						$category = Mage::getModel('catalog/category')->load($currentCategory->getId());
+						$names = array();
+						foreach ($category->getParentCategories() as $parent) {
+						$names[] = $parent->getName();
+						}
+					}
+                ?>
+                <span style="display:none" class="abcde"><?php echo $names['0']; ?></span>
+                </div>
+                   <?php endif;?>
+                
+                
+                <!--div class="origin">
+				<h3>Sku</h3>
+				<p><?php //echo $_product->getSku();?></p>
+				</div -->
+                
+				<?php if ($_product->getData('origin')!='') {?>
+				<div class="origin">
+				<h3>ORIGIN</h3>
+				<p><?php echo $_product->getData('origin');?></p>
+				</div>
+				<?php }?>
+				
+                <?php echo $this->getChildHtml('alert_urls') ?>
+
+                <?php if ($_product->getShortDescription()):?>
+                    <div class="short-description">
+                    <h3>SUGGESTIONS FOR SERVING</h3>
+                        <p><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></p>
+                    </div>
+                <?php endif;?>
+
+
+
+
+                <?php echo $this->getChildHtml('other');?>
+
+                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                <?php endif;?>
+
+            </div>
+
+            <div class="add-to-cart-wrapper">
+                <?php echo $this->getChildHtml('product_type_data') ?>
+                <?php echo $this->getChildHtml('extrahint') ?>
+
+                <?php if (!$this->hasOptions()):?>
+                    <div class="add-to-box">
+                        <div class="simple-price">
+                            <?php if($_product->getTypeId()=='simple') { ?>
+        
+                               <div class="price-info">
+                                    <?php echo $this->getPriceHtml($_product); ?>
+                                    <?php echo $this->getChildHtml('bundle_prices') ?>
+                                    <?php echo $this->getTierPriceHtml() ?>
+                                </div>
+                
+                                <div class="extra-info">
+                                    <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
+                                    <?php //echo $this->getChildHtml('product_type_availability'); ?>
+                           
+                                </div>
+            
+                            <?php }?>
+                        </div>
+                    
+                        <?php if($_product->isSaleable()): ?>
+                            <?php echo $this->getChildHtml('addtocart') ?>
+                            <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+                                <span class="or"><?php echo $this->__('OR') ?></span>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php echo $this->getChildHtml('addto') ?>
+                        <?php //echo $this->getChildHtml('sharing') ?>
+                    </div>
+                    <?php echo $this->getChildHtml('extra_buttons') ?>
+                <?php elseif (!$_product->isSaleable()): ?>
+                    <div class="add-to-box">
+                        <?php echo $this->getChildHtml('addto') ?>
+                        <?php echo $this->getChildHtml('sharing') ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <?php //echo $this->getChildHtml('related_products') ?>
+
+            <div class="clearer"></div>
+            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+            <?php endif;?>
+        </form>
+        <script type="text/javascript">
+        //<![CDATA[
+           var productAddToCartForm = new VarienForm('product_addtocart_form');
+           productAddToCartForm.submit = function(button, url) {
+                if (this.validator.validate()) {
+                    var form = this.form;
+                    var oldUrl = form.action;
+
+                    if (url) {
+                       form.action = url;
+                    }
+                    var e = null;
+                    try {
+                        this.form.submit();
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+                        throw e;
+                    }
+
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+
+            productAddToCartForm.submitLight = function(button, url){
+                if(this.validator) {
+                    var nv = Validation.methods;
+                    delete Validation.methods['required-entry'];
+                    delete Validation.methods['validate-one-required'];
+                    delete Validation.methods['validate-one-required-by-name'];
+                    // Remove custom datetime validators
+                    for (var methodName in Validation.methods) {
+                        if (methodName.match(/^validate-datetime-.*/i)) {
+                            delete Validation.methods[methodName];
+                        }
+                    }
+
+                    if (this.validator.validate()) {
+                        if (url) {
+                            this.form.action = url;
+                        }
+                        this.form.submit();
+                    }
+                    Object.extend(Validation.methods, nv);
+                }
+            }.bind(productAddToCartForm);
+        //]]>
+        </script>
+    </div>
+
+    <?php /*?><div class="product-collateral toggle-content tabs">
+        <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
+            <dl id="collateral-tabs" class="collateral-tabs">
+                <?php foreach ($detailedInfoGroup as $alias => $html):?>
+                    <dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
+                    <dd class="tab-container">
+                        <div class="tab-content"><?php echo $html ?></div>
+                    </dd>
+                <?php endforeach;?>
+            </dl>
+        <?php endif; ?>
+    </div><?php */?>
+
+    <?php echo $this->getChildHtml('upsell_products') ?>
+    <?php echo $this->getChildHtml('product_additional_data') ?>
+    
+    <?php $currentCategory =  Mage::registry('current_category');
+		
+    ?>
+
+</div>
+<div class="addedproductmessage">
+    <div id="success-message-container-data" style="display: block;">
+    <div class="cart-clouse"></div>
+        <span id="addedcart"></span>
+        <!--button type="button" name="finish_and_checkout" id="finish_and_checkout" class="button btn-cart">
+            <span>
+                <span>Go to cart page</span>
+            </span>
+        </button>
+        <button type="button" name="continue_shopping" id="continue_shopping" class="button btn-cart">
+            <span>
+                <span>Continue shopping</span>
+            </span>
+        </button-->
+    </div>
+</div>
+
+<script>
+
+jQuery(document).ready(function()	{
+		
+    
+        jQuery('#addtocart').unbind('click');
+		jQuery('#addtocart').click(function() { 
+            
+
+        fbq('track', 'AddToCart', {
+        content_ids: ['<?php echo $_product->getSku();?>'],
+        content_type: 'product',
+        currency: 'INR',
+        value: '<?php echo $_product->getFinalPrice();?>'
+        });
+            
+			var Data=jQuery('#product_addtocart_form').serialize();
+			jQuery('.loadingaddimg').show();
+			jQuery.ajax({
+			method: 'POST',
+			dataType: 'json',
+			data:Data,
+			url: '<?php echo $this->getUrl()?>checkout/cart/add/',
+			success:function (msg) {  
+				if(msg.status==1){ 
+					jQuery('.loadingaddimg').hide(); 
+					jQuery('.cart .search-cont').empty().append(msg.minicarthead);
+					//jQuery('.search-cont').slideDown(800);
+					jQuery('.item-count').empty().append(msg.items); 
+					jQuery('.addedproductmessage').css('display','block');
+					jQuery('#addedcart').empty().append(msg.message); 
+				} else {
+						jQuery('.loadingaddimg').hide();
+						alert(msg.message); 
+				}
+			}
+		});
+		return false;
+	});
+	
+	
+		
+	
+			 
+
+	
+});
+
+</script>
+
+<script type="text/javascript">
+jQuery(document).ready(function(e) {
+	var objQty = {};
+	<?php 
+		if($_product->isConfigurable()):
+		foreach ($_product->getTypeInstance()->getUsedProducts() as $childProduct):
+			// Get the inventory data for this child / Simple Product
+			$stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($childProduct);
+			echo 'objQty[' . $childProduct->getQuantity() . '] = ' . $stockItem->getQty() . ';';
+			//Mage::log("ProductID: {$childProduct->getID()} qty:$qty");
+		endforeach;
+		//else: 
+			// Simple product
+			//$stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product);
+			//echo 'objQty[' . $stockItem->getQuantity() . '] = ' . $stockItem->getQty() . ';';
+		endif; 
+		//echo json_encode($qty_json);
+	?>
+	
+	var selected_option = jQuery("#attribute135 option:nth-child(2)").val();
+	//console.log(objQty);
+	for(i = 1; i <= objQty[selected_option]; i++) {
+		jQuery('#qty').append(jQuery('<option>', { 
+			value: i,
+			text : i 
+		}));
+		jQuery('#qty_custom').append('<li value="'+i+'"><a href="javascript:void(0);">'+i+'</a></li>');
+	}
+	
+	jQuery('.input-box .super-attribute-select').hide().parent().find('.customDropdawn').append("<ul class='select_size custom_size'></ul>");
+	jQuery('.input-box .super-attribute-select option').each(function() {			
+		jQuery('.select_size').append('<li value="' + jQuery(this).val() + '"><a>'+jQuery(this).text()+'</a></li>');  
+	});
+	
+	jQuery('.select_size li:first-child').remove();
+	jQuery('.select_size li').unbind(); 
+	jQuery('.select_size li').bind('click',function() {
+		var rel =jQuery(this).attr('value');
+	
+		jQuery('#qty').empty();
+		jQuery('#qty_custom').empty();
+		for(i = 1; i <= objQty[rel]; i++) {
+			jQuery('#qty').append(jQuery('<option>', { 
+				value: i,
+				text : i 
+			}));
+			jQuery('#qty_custom').append('<li value="'+i+'"><a href="javascript:void(0);">'+i+'</a></li>');
+		}
+		
+		jQuery('.qty-wrapper').find('.custom-qut').text('1').append('<i class="fa fa-angle-down"></i>');
+		jQuery('.select_size li').removeClass('active');
+		jQuery(this).addClass('active'); 
+		jQuery(".super-attribute-select option").removeAttr("selected");
+		jQuery(".super-attribute-select option[value="+rel+"]").attr("selected", "selected");
+	});
+	
+	jQuery(document).on('click','ul.customsize li',function() {
+		jQuery('ul.customsize li').removeClass('active');
+		jQuery(".qty-wrapper select.qty option").removeAttr("selected");
+		var qutvalue = jQuery(this).attr('value');
+		//console.log(qutvalue);
+		jQuery(this).addClass('active');
+		jQuery(".qty-wrapper select.qty option[value="+qutvalue+"]").attr("selected", "selected");
+	});
+
+	//jQuery('#qty option:nth-child(2)').attr('selected','selected');
+	//jQuery('.qty-wrapper').find("[value='1']").addClass('active');
+	jQuery('.qty-wrapper').find('.custom-qut').text('1').append('<i class="fa fa-angle-down"></i>');
+	
+	jQuery('.custom_size li').each(function() {
+		var text = jQuery(this).find('a').text();
+		 jQuery(this).find('a').text(text.replace('+', '~ ').replace('.00', ' ').replace('', ' '));
+	});
+	
+	//jQuery("#attribute135").val(jQuery("#attribute135 option:first").val());
+	jQuery("#attribute135 option:nth-child(2)").attr('selected','selected');
+	jQuery("#qty option:nth-child(2)").attr('selected','selected');
+	
+
+	jQuery(".custom_size").find("[value='" + selected_option + "']").addClass('active');
+	jQuery('.1 > .activeQuantitiy').text(jQuery(".custom_size").not('#qty_custom').find("[value='" + selected_option + "']").text()).append('<i class="fa fa-angle-down"></i>');
+	
+	jQuery(".qty-wrapper").find("[value='1']").addClass('active');
+	jQuery('.qty-wrapper').find('.custom-qut').text('1').append('<i class="fa fa-angle-down"></i>');
+	
+});	
+
+
+
+jQuery(document).ready(function(){
+	
+	  jQuery('.navigation .nav-primary li a').each(function(){
+		  
+		 var categoryname =  jQuery(this).text();
+		 
+		 var findcategoryname = '<?php echo  $names['0'];?>';
+		   if(categoryname==findcategoryname) {
+				
+				jQuery(this).addClass('activecategory').css('color','#f7bd2a');
+			}
+		 });
+		 jQuery('.navigation .nav-primary li').each(function(){
+			 var hasactiveclass = 	jQuery(this).hasClass('active');
+				if(hasactiveclass) {
+					jQuery(this).removeClass('active');
+				}
+		  });
+	});
+</script>
+

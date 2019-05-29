@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+	<global>
+		<page>
+			<layouts>
+			<custom_page_home>
+					<label>Home Page</label>
+					<template>page/custom/home.phtml</template>
+				</custom_page_home>
+				
+				<custom_page_list>
+					<label>Listing Page</label>
+					<template>page/custom/listing-page.phtml</template>
+				</custom_page_list>
+				
+				<custom_page_details>
+					<label>Details Page</label>
+					<template>page/2columns-left-details.phtml</template>
+				</custom_page_details>
+                
+                <custom_page_header>
+					<label>Blog Header Page</label>
+					<template>page/custom/blog-header.phtml</template>
+				</custom_page_header>
+                
+                <custom_page_footer>
+					<label>Blog footer Page</label>
+					<template>page/custom/blog-footer.phtml</template>
+				</custom_page_footer>
+                
+			</layouts>
+		</page>
+	</global>
+</config>

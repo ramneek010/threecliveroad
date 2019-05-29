@@ -1,0 +1,60 @@
+<?php $currentCategory =  Mage::registry('current_category');?>
+<?php $currentProduct =  Mage::registry('current_product');?>
+<?php if($currentCategory!='') {?>
+	     <?php  $currentCatId = $currentCategory->getId();?> 
+<?php }?>
+<?php if($currentProduct!='') {
+		$currentProductId = $currentProduct->getId();
+	}?>
+
+<?php if($currentProductId=='') { ?>
+<?php $active= "category_active";?>
+<?php } else {?>
+<?php $activeProduct= "category_active";?>
+<?php }?>
+
+
+<?php 
+		$productsColleciton = Mage::getModel('catalog/category')->load(7)
+							->getProductCollection()
+							->addAttributeToSelect('*')
+							->addAttributeToFilter('status', 1)
+							->addAttributeToFilter('visibility', 4)
+							 ->setOrder('name', 'ASC');
+?>		 
+	
+
+
+<?php 
+		$productscollecitonClassic = Mage::getModel('catalog/category')->load(8)
+							->getProductCollection()
+							->addAttributeToSelect('*')
+							->addAttributeToFilter('status', 1)
+							->addAttributeToFilter('visibility', 4)
+							 ->setOrder('name', 'ASC');
+?>
+
+    <div class="remove-filter">
+    <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+    </div>
+    <div class="block-title"> 
+<span class="<?php if($currentCatId=='3') { echo $active ;}?>"><a href="<?php echo Mage::getBaseUrl()?>tea.html"> ALL TEAS</a></span> </div>
+    <div class="left-category">
+    <h3><span class="<?php if($currentCatId=='7') { echo $active ;}?>"> <a href="<?php echo Mage::getBaseUrl()?>tea/blends.html">BLENDS</a></span></h3>
+    <ul>
+		<?php 
+        foreach($productsColleciton as $productData) {  ?>
+        	<li><span class="<?php if($currentProductId==$productData->getId()) { echo $activeProduct ;}?>"><a href="<?php echo $productData->getProductUrl()?>"><?php echo $productData->getName()?></a></span></li>
+        <?php	 } ?>
+    </ul>
+    </div>
+
+     <div class="left-category">
+    <h3><span class="<?php if($currentCatId=='8') { echo $active ;}?>"> <a href="<?php echo Mage::getBaseUrl()?>tea/classics.html">Classics</a></span></h3>
+    <ul>
+		<?php 
+        foreach($productscollecitonClassic as $productData) {  ?>
+        	<li><span class="<?php if($currentProductId==$productData->getId()) { echo $activeProduct ;}?>"><a href="<?php echo $productData->getProductUrl()?>"><?php echo $productData->getName()?></a></span></li>
+        <?php	 } ?>
+    </ul> 
+    </div>
