@@ -1,0 +1,204 @@
+<changelist name="cache" date="1559208039981" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/cache/shelved.patch" />
+  <option name="DESCRIPTION" value="cache" />
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--0/mage---25c_DB_PDO_MYSQL_DDL_log_visitor_info_1" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--0/mage---25c_LAYOUT_1DB450B5546E6CDB0C58CD33B1ADC4A9E" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--0/mage---internal-metadatas---25c_DB_PDO_MYSQL_DDL_log_visitor_info_1" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--0/mage---internal-metadatas---25c_LAYOUT_1DB450B5546E6CDB0C58CD33B1ADC4A9E" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--1/mage---25c_TRANSLATE_EN_US_FRONTEND_1_CLIVE_MASTER" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--1/mage---internal-metadatas---25c_TRANSLATE_EN_US_FRONTEND_1_CLIVE_MASTER" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--2/mage---25c_CONFIG_GLOBAL" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--2/mage---internal-metadatas---25c_CONFIG_GLOBAL" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--3/mage---25c_config_theme" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--3/mage---internal-metadatas---25c_config_theme" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--4/mage---25c_CORE_CACHE_OPTIONS" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--4/mage---internal-metadatas---25c_CORE_CACHE_OPTIONS" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--5/mage---25c_CONFIG_GLOBAL_ADMIN" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--5/mage---25c_CONFIG_GLOBAL_CRONTAB" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--5/mage---25c_CONFIG_GLOBAL_INSTALL" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--5/mage---25c_CONFIG_GLOBAL_STORES" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--5/mage---internal-metadatas---25c_CONFIG_GLOBAL_ADMIN" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--5/mage---internal-metadatas---25c_CONFIG_GLOBAL_CRONTAB" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--5/mage---internal-metadatas---25c_CONFIG_GLOBAL_INSTALL" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--5/mage---internal-metadatas---25c_CONFIG_GLOBAL_STORES" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--6/mage---25c_CONFIG_GLOBAL_ADMINHTML" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--6/mage---25c_CONFIG_GLOBAL_WEBSITES" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--6/mage---internal-metadatas---25c_CONFIG_GLOBAL_ADMINHTML" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--6/mage---internal-metadatas---25c_CONFIG_GLOBAL_WEBSITES" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--7/mage---25c_STORE_ADMIN_CONFIG_CACHE" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--7/mage---internal-metadatas---25c_STORE_ADMIN_CONFIG_CACHE" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--8/mage---25c_CONFIG_GLOBAL_STORES_ADMIN" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--8/mage---25c_STORE_DEFAULT_CONFIG_CACHE" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--8/mage---internal-metadatas---25c_CONFIG_GLOBAL_STORES_ADMIN" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--8/mage---internal-metadatas---25c_STORE_DEFAULT_CONFIG_CACHE" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--9/mage---25c_CONFIG_GLOBAL_STORES_DEFAULT" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--9/mage---internal-metadatas---25c_CONFIG_GLOBAL_STORES_DEFAULT" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--c/mage---25c_APP_B1FB6E8F13287C01E5C05063633DDA4C" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--c/mage---25c_APP_E4D52B98688947405EDE639E947EE03D" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--c/mage---internal-metadatas---25c_APP_B1FB6E8F13287C01E5C05063633DDA4C" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--c/mage---internal-metadatas---25c_APP_E4D52B98688947405EDE639E947EE03D" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--d/mage---25c_APP_4E4ABDD8DC00C3DACB3C1597944A3B6C" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--d/mage---internal-metadatas---25c_APP_4E4ABDD8DC00C3DACB3C1597944A3B6C" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--e/mage---25c_LAYOUT_FRONTEND_STORE1_CLIVE_MASTER" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="var/cache/mage--e/mage---internal-metadatas---25c_LAYOUT_FRONTEND_STORE1_CLIVE_MASTER" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>

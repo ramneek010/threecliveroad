@@ -1,0 +1,42 @@
+
+    <nav id="nav">
+        <ol class="nav-primary">
+            <li  class="level0 nav-1 first"><a  href="http://localhost/CLIVE/tea.html?___SID=U" class="level0 ">Tea</a></li><li  class="level0 nav-2"><a  href="http://localhost/CLIVE/accessories.html?___SID=U" class="level0 ">Accessories</a></li><li  class="level0 nav-3"><a  href="http://localhost/CLIVE/journal.html?___SID=U" class="level0 ">Journal</a></li><li  class="level0 nav-4 last"><a  href="http://localhost/CLIVE/press.html?___SID=U" class="level0 ">Press</a></li>            <li class="level0 nav-6 last onlyMobile"><a href="http://www.threecliveroad.com/tea@3/" class="level0 tea3Hover"><img src="http://localhost/CLIVE/skin/frontend/clive/master/images/tea@3-logo.svg" title="tea@3" alt="tea@3" style="height: 19px;vertical-align: middle;width: 60px;" class="mouseHoverOut" />
+            <img src="http://localhost/CLIVE/skin/frontend/clive/master/images/tea@3-yellow-logo.svg" title="tea@3" alt="tea@3" style="height: 19px;vertical-align: middle;width: 60px;" class="mouseHoverShow" />
+            <img src="http://localhost/CLIVE/skin/frontend/clive/master/images/tea@3-black.svg" title="tea@3" alt="tea@3" style="height: 19px;vertical-align: middle;width: 60px;" class="onlyMobileShow" /></a>
+            </li>
+        </ol>
+    </nav>
+
+<style>
+    .mouseHoverShow{
+        display: none;
+        position: absolute;
+        top: 14px;
+    }
+    .level0.tea3Hover:hover .mouseHoverShow{
+        display: block;
+    }
+    .level0.tea3Hover:hover .mouseHoverOut{
+        opacity: 0;
+    }
+    img.onlyMobileShow{
+        display: none;
+    }
+    
+    @media only screen and (max-width: 770px){
+        img.mouseHoverOut,
+        img.mouseHoverShow{
+            display: none;
+        }
+       img.onlyMobileShow{
+            display: block;
+        }
+        .level0.nav-6.last.onlyMobile{
+            padding: 8px 0px;
+        }
+        .level0.tea3Hover:hover .mouseHoverShow{
+            display: none;
+        }
+    }
+</style>
